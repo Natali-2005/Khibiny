@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Где мечта становится небом | Северное сияние и Хибины</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefcf7;
+            color: #1f2e2a;
+            line-height: 1.55;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* ========= ГРАДИЕНТНЫЙ ЗАГОЛОВОК С ПРОЗРАЧНОСТЬЮ ========= */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .gradient-headline {
+            font-size: clamp(2rem, 7vw, 3.8rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(125deg, #0A3E4A, #1F7A6B, #93C9B0, #D4EEDB);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            animation: auroraMove 10s ease infinite;
+        }
+        @keyframes auroraMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-sub {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #2b7a6b;
+            background: rgba(43, 122, 107, 0.08);
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+
+        /* ========= ВИЗУАЛЬНАЯ ИЕРАРХИЯ ========= */
+        h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+            letter-spacing: -0.01em;
+            border-left: 5px solid #2b8b7a;
+            padding-left: 1.2rem;
+            color: #164e44;
+        }
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 1.8rem 0 0.8rem;
+            color: #206b5c;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .lead {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #2c5b50;
+            border-bottom: 2px solid #cbddd6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* текстовая стилистика */
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.02rem;
+            color: #2d423e;
+        }
+
+        /* ========= АКЦЕНТНЫЕ ЦИТАТЫ ========= */
+        .quote-block {
+            background: linear-gradient(115deg, #eff8f4, #e4f1eb);
+            border-left: 8px solid #2b8b7a;
+            padding: 1.5rem 2rem;
+            border-radius: 1.5rem;
+            margin: 2rem 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-style: italic;
+            color: #125b4e;
+        }
+        .slogan-block {
+            background: #e0f0ea;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 2rem;
+            margin: 2rem 0;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            color: #0c5a4b;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        /* ========= СЕТКА ИЗОБРАЖЕНИЙ (полноширокие или в ряд) ========= */
+        .full-img {
+            width: 100%;
+            border-radius: 1.8rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 15px 25px -12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .full-img:hover {
+            transform: scale(1.01);
+        }
+        .two-columns-imgs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .two-columns-imgs .img-item {
+            flex: 1;
+            min-width: 200px;
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+        .two-columns-imgs img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform 0.4s;
+            border-radius: 1.2rem;
+        }
+        .two-columns-imgs img:hover {
+            transform: scale(1.02);
+        }
+
+        /* карта (маленький акцент) */
+        .map-card {
+            background: #fff6ea;
+            border-radius: 1.5rem;
+            padding: 1rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            border: 1px solid #f0e0ce;
+        }
+
+        /* ссылка-кнопка */
+        .link-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #216b5e;
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 1rem 0 0.5rem;
+            transition: all 0.25s;
+        }
+        .link-button:hover {
+            background: #0e5448;
+            gap: 18px;
+        }
+
+        /* хештеги */
+        .hashtags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin: 2.5rem 0 1.5rem;
+        }
+        .hashtag {
+            background: rgba(43, 139, 122, 0.1);
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1d6c5c;
+            border: 1px solid #c1dbd2;
+            transition: all 0.2s;
+        }
+        .hashtag:hover {
+            background: #2b8b7a;
+            color: white;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #68887d;
+            border-top: 1px solid #d7e6e0;
+            padding-top: 2rem;
+        }
+
+        /* адаптивность */
+        @media (max-width: 760px) {
+            .container {
+                padding: 1rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .slogan-block {
+                font-size: 1.5rem;
+                padding: 1.2rem;
+            }
+            .quote-block {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+            .two-columns-imgs {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- ЗАГОЛОВОК С ГРАДИЕНТОМ И ПРОЗРАЧНОСТЬЮ -->
+    <div class="hero">
+        <div class="gradient-headline">Там, где небо горит изумрудом</div>
+        <div class="hero-sub"><i class="fas fa-location-dot"></i> Хибины · Кольский полуостров</div>
+    </div>
+
+    <!-- ВСТУПЛЕНИЕ: ДАВНЯЯ МЕЧТА -->
+    <p>У каждого из нас есть карта желаний, где одно место отмечено особенно жирной точкой. У меня это была точка с координатами северного сияния. Годами я рассматривала чужие фотографии, читала дневники полярников, и тихо верила: однажды зелёный свет затанцует и надо мной.</p>
+    <p>И вот — я стою в снежной тишине Мурманской области, задрав голову к бескрайнему звёздному небу Заполярья. Вокруг ни звука, только морозный хруст и собственное сердце. А потом небо взрывается. Легкий туман, едва заметный, превращается в пульсирующие изумрудные ленты. Северное сияние… Оно невозможно описать словами — его нужно увидеть.</p>
+
+    <!-- ИЗОБРАЖЕНИЕ: Северное сияние над ночным небом + звездное небо (одно фото) -->
+    <img class="full-img" src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&auto=format" alt="Северное сияние и звездное небо Заполярья" loading="lazy">
+
+    <p>Зелёные волны двигались, переливались, меняли форму, словно кто-то невидимый рисовал по небу светящиеся иероглифы. В эти минуты понимаешь: мы так малы, но наши мечты — огромны. Сияние длилось всего несколько минут, но в памяти оно останется навсегда. Мечты действительно сбываются — нужно лишь позволить себе верить.</p>
+
+    <!-- РАЗДЕЛ: Хибины и горные пейзажи -->
+    <h2><i class="fas fa-mountain-sun"></i> Хибины — место силы и вдохновения</h2>
+    <p>Но Север приготовил для меня не только ночную магию. Следующей главой стали древние горы — Хибины. Суровые скалы, укутанные в золото осенней тундры, и бесконечные долины, где время течёт иначе. Мы поднимались по каменистым тропам, проходили перевалы, и каждый новый поворот открывал панорамы, от которых захватывало дух.</p>
+
+    <!-- два фото: горные пейзажи + золотая осень -->
+    <div class="two-columns-imgs">
+        <div class="img-item"><img src="https://images.unsplash.com/photo-1585747860714-2ba6f5c6d3b4?w=800&auto=format" alt="Горный пейзаж Хибин" loading="lazy"></div>
+        <div class="img-item"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format" alt="Золотая северная осень в горах" loading="lazy"></div>
+    </div>
+
+    <p>Осень здесь — роскошная художница. Берёзы горят золотом, хвойные леса отливают изумрудом, а склоны гор покрыты ковром из багрянца и меди. Бескрайняя тайга и долины уходят за горизонт, а над ними — низкое северное небо, которое кажется бесконечным. Именно здесь, среди скал и водопадов, чувствуешь себя частью чего-то грандиозного.</p>
+
+    <!-- ВСТАВКА ЦИТАТЫ ПРО ГОРЫ -->
+    <div class="quote-block">
+        <i class="fas fa-quote-left"></i> «Лучше гор могут быть только горы!» — шепчу я, глядя на хребты, уходящие в молочную дымку. И это правда. Хибины покоряют не высотой, а своей первозданной душой.
+    </div>
+
+    <!-- ВОДОПАД И ЛИЧНОЕ ФОТО (личное фото путешественницы) -->
+    <h3><i class="fas fa-water"></i> Водопад среди северного леса</h3>
+    <div class="two-columns-imgs">
+        <div class="img-item"><img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&auto=format" alt="Водопад в северном лесу" loading="lazy"></div>
+        <div class="img-item"><img src="https://images.unsplash.com/photo-1530789253388-582c481da54b?w=800&auto=format" alt="Путешественница на фоне северной природы" loading="lazy"></div>
+    </div>
+    <p>Особенно запомнился водопад, затерянный среди каменных глыб и вековых сосен. Шум воды, свежий ветер и запах мха. В такие моменты останавливаешься, закрываешь глаза и просто дышишь. Северная природа умеет возвращать человека к самому себе. Без лишних слов, без советов — просто берёт и вынимает из тебя всю суету, оставляя лишь тишину и благодарность.</p>
+
+    <!-- КАРТА ХИБИН КАК СИМВОЛ МАРШРУТА И ОТКРЫТИЙ -->
+    <div class="map-card">
+        <i class="fas fa-map fa-2x" style="color: #2b8b7a;"></i>
+        <p style="margin: 0.5rem 0 0; font-weight: 600;">Карта Хибин — каждый маршрут ведёт к новому открытию</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Khibiny_map_fr.svg/1024px-Khibiny_map_fr.svg.png?width=300&auto=format" alt="схематичная карта Хибин" style="width: 100%; max-width: 380px; border-radius: 1.2rem; margin-top: 0.8rem;" loading="lazy">
+        <p style="font-size: 0.8rem; margin-top: 0.8rem;">Перевалы, озёра и вершины — маршрутов хватит не на одно лето</p>
+    </div>
+
+    <!-- ЛИЧНЫЕ ВПЕЧАТЛЕНИЯ И ВНУТРЕННИЕ ОТКРЫТИЯ -->
+    <h2><i class="fas fa-feather-alt"></i> Что Север подарил мне на самом деле</h2>
+    <p>Путешествия дарят эмоции, которые остаются на всю жизнь. Но Север дал нечто большее: он подарил ощущение внутренней силы. Когда стоишь на перевале, а ветер дует в лицо, и вокруг — ни души, только горы и небо, — ты вдруг отчётливо понимаешь, как много способен преодолеть. И как важно иногда отключаться от гонки, чтобы услышать себя.</p>
+    <p>Каждый вечер я смотрела на звёзды над Хибинами, и мне казалось, что они стали ближе. Здесь иначе дышится, иначе думается. Ты перестаёшь спешить и начинаешь замечать детали: как солнце золотит лишайник на камнях, как облака цепляются за вершины, как умирающий день окрашивает горы в розовый.</p>
+
+    <!-- ПАНОРАМНЫЙ ВИД (ФИНАЛЬНАЯ ФОТОГРАФИЯ) -->
+    <img class="full-img" src="https://images.unsplash.com/photo-1515847049296-a8ab4b204ec9?w=1200&auto=format" alt="Панорама гор и долин Хибины" loading="lazy">
+
+    <p>Уезжая, я оглянулась на уходящие вдаль горные массивы и твёрдо знала: это не прощание. Север однажды входит в сердце — и остаётся там навсегда. Он учит смелости, терпению и умению радоваться простому: огню в костре, чаю из термоса, первому снегу на вершине.</p>
+
+    <!-- СИЛЬНЫЙ ЭМОЦИОНАЛЬНЫЙ ВЫВОД + СЛОГАН -->
+    <div class="slogan-block">
+        <i class="fas fa-compass"></i> «На Севере — жить!»
+    </div>
+
+    <p>Я верю, что каждый должен однажды увидеть северное сияние. Не на экране телефона, а настоящим, живым, морозным и пульсирующим. И пройти хотя бы пару троп в Хибинах, чтобы почувствовать: ты можешь больше, чем думаешь. Спасибо этому краю за свободу, тишину и напоминание о том, что мечты сбываются.</p>
+
+    <!-- ССЫЛКА -->
+    <div style="text-align: center; margin: 2rem 0 0rem;">
+        <a href="#" class="link-button">📖 Подробнее о путешествии (весь маршрут) <i class="fas fa-arrow-right"></i></a>
+        <p style="font-size: 0.75rem; margin-top: 0.5rem; color: #5f8a7e;">[ВСТАВИТЬ ССЫЛКУ]</p>
+    </div>
+
+    <!-- ХЕШТЕГИ: 10 штук -->
+    <div class="hashtags">
+        <span class="hashtag">#МурманскаяОбласть</span>
+        <span class="hashtag">#Хибины</span>
+        <span class="hashtag">#СеверноеСияние</span>
+        <span class="hashtag">#КольскийПолуостров</span>
+        <span class="hashtag">#ПутешествияПоРоссии</span>
+        <span class="hashtag">#РусскийСевер</span>
+        <span class="hashtag">#НаСевереЖить</span>
+        <span class="hashtag">#ГорыХибины</span>
+        <span class="hashtag">#ПриродаСевера</span>
+        <span class="hashtag">#СилаПрироды</span>
+    </div>
+
+    <footer>
+        <i class="fas fa-camera-retro"></i> История северной мечты: от первого огня сияния до вершин Хибин<br>
+        Текст и путешествие — личный дневник путешественницы
+    </footer>
+</div>
+</body>
+</html>
